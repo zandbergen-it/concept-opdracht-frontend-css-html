@@ -4,6 +4,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
 }
 
 :root {
@@ -91,7 +92,6 @@ label {
 .slant {
     position: relative;
     bottom: 0;
-    left:0;
     border-right: 100vw solid transparent;
     border-bottom: 50px solid white;
 }
@@ -99,7 +99,6 @@ label {
 .slant-inverted {
     position: relative;
     top: 50px;
-    right:0;
     border-left: 100vw solid transparent;
     border-top: 50px solid white;
 }
@@ -279,7 +278,7 @@ nav a {
 }
 
 .services-article img {
-    width: 100px;
+    width: 80px;
 }
 
 /* ------------- 4.5 Contact section ------------- */
@@ -313,6 +312,7 @@ input, textarea {
     border: 0;
     color: grey;
     padding: 10px;
+    width: 400px;
 }
 
 input {
