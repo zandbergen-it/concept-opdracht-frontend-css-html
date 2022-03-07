@@ -15,7 +15,7 @@
 }
 
 .site-inside-width{
-    width: 800px;
+    width: 80%;
     padding-top: 40px;
 }
 
@@ -27,9 +27,8 @@ h1, h2, h3, h4 {
 h1 {
     font-weight: 400;
     font-size: 40px;
-    text-align: center;
     color: white;
-    padding: 30px;
+    text-align: center;
 }
 
 h2 {
@@ -89,8 +88,7 @@ label {
 }
 
 /* ------------- 3.2 Slant ------------- */
-header:after, .work-section:before, .services-section:before {
-    content:'';
+.slant {
     position: relative;
     bottom: 0;
     left:0;
@@ -98,13 +96,12 @@ header:after, .work-section:before, .services-section:before {
     border-bottom: 50px solid white;
 }
 
-.work-section:before {
-    top: -67px;
-    border-bottom: 50px solid var(--light-grey);
-}
-
-.services-section:before {
-    top: -140px;
+.slant-inverted {
+    position: relative;
+    top: 50px;
+    right:0;
+    border-left: 100vw solid transparent;
+    border-top: 50px solid white;
 }
 
 /* ------------- 3.3 Squiggle ------------- */
@@ -112,11 +109,33 @@ header:after, .work-section:before, .services-section:before {
     width: 60px;
 }
 
+/* ------------- 3.4 Hover line ------------- */
+.grow-line {
+    position: relative;
+    display: inline-block;
+}
+
+.grow-line:after {
+    content: "";
+    height: 2px;
+    width: 20px;
+    background-color: var(--purple);
+    position: absolute;
+    left: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.grow-line:hover:after {
+    width: 150px;
+    left: 150px;
+    transition: width .35s ease-out;
+}
+
 /* ------------- 4. Areas ------------- */
 
 /* ------------- 4.1 Header ------------- */
 header {
-    position: relative;
     background: var(--purple-gradient);
     display: flex;
     flex-direction: column;
@@ -182,6 +201,7 @@ nav a {
 
 .work-section {
     background: var(--light-grey);
+    padding-top: 100px;
 }
 
 .work-article, .work-article-inverted {
@@ -190,7 +210,7 @@ nav a {
     justify-content: center;
     flex-wrap: wrap;
     flex-basis: 400px;
-    min-width: 1500px;
+    min-width: 80%;
     padding-bottom: 100px;
 }
 
@@ -206,7 +226,6 @@ nav a {
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 500px;
-    height: 400px;
     padding: 80px 100px 80px 30px;
 }
 
@@ -214,14 +233,23 @@ nav a {
     padding: 80px 30px 80px 100px;
 }
 
-.work-div a {
+.work-div a, .work-div-inverted a {
     display:inline-block;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.work-article > img {
-    width: 900px;
+.work-article > img, .work-article-inverted > img {
     box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 786px) {
+    .work-div, .work-div-inverted {
+        padding: 80px;
+    }
+    .work-article > img, .work-article-inverted > img {
+        width: 90%;
+    }
 }
 
 /* ------------- 4.4 Services section ------------- */
@@ -257,6 +285,8 @@ nav a {
 /* ------------- 4.5 Contact section ------------- */
 .contact-section {
     background: var(--purple-gradient);
+    padding-top: 100px;
+
 }
 
 .contact-div p{
@@ -279,8 +309,6 @@ nav a {
 input, textarea {
     font-family: Roboto, sans-serif;
     font-size: 1em;
-    min-width: 600px;
-    max-width: 800px;
     border-radius: 5px;
     border: 0;
     color: grey;
