@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400&family=Merriweather:wght@300;400;700&family=Roboto+Serif:wght@100;300;400;500&display=swap');
+
+/* ------------- 1. Global styles ------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --purple-gradient: linear-gradient(153deg, rgba(72,69,228,1) 0%, rgba(87,34,205,1) 100%);
+    --purple: #5722CD;
+    --light-grey: #F3F6F9;
+    --pink: #ED4385;
+    --box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.42);
+}
+
+.site-inside-width{
+    width: 800px;
+    padding-top: 40px;
+}
+
+/* ------------- 2. Typography ------------- */
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 27px;
+    color: var(--purple);
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    color: var(--purple);
+    text-align: start;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+p, a, label {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--purple);
+}
+
+label {
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+}
+
+/* ------------- 3. Layout ------------- */
+
+/* ------------- 3.1 Button ------------- */
+.button {
+    background-color: var(--pink);
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: white;
+    font-weight: 300;
+    padding: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: var(--box-shadow);
+}
+
+/* ------------- 3.2 Slant ------------- */
+header:after, .work-section:before, .services-section:before {
+    content:'';
+    position: relative;
+    bottom: 0;
+    left:0;
+    border-right: 100vw solid transparent;
+    border-bottom: 50px solid white;
+}
+
+.work-section:before {
+    top: -67px;
+    border-bottom: 50px solid var(--light-grey);
+}
+
+.services-section:before {
+    top: -140px;
+}
+
+/* ------------- 3.3 Squiggle ------------- */
+.squiggle {
+    width: 60px;
+}
+
+/* ------------- 4. Areas ------------- */
+
+/* ------------- 4.1 Header ------------- */
+header {
+    position: relative;
+    background: var(--purple-gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+header > img {
+    position: relative;
+    top: 50px;
+}
+.header-textblock {
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    column-gap: 30px;
+    padding-right: 100px;
+}
+
+nav a {
+    color: white;
+}
+
+.header-textblock p {
+    font-weight: 300;
+    font-size: 2em;
+    color: white;
+    padding: 30px;
+}
+
+/* ------------- 4.2 Intro section ------------- */
+
+.intro-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 90px;
+    padding-top: 90px;
+}
+
+.intro-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-div p {
+    font-size: 1.2em;
+}
+
+/* ------------- 4.3 Work section ------------- */
+
+.work-section {
+    background: var(--light-grey);
+}
+
+.work-article, .work-article-inverted {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: 400px;
+    min-width: 1500px;
+    padding-bottom: 100px;
+}
+
+.work-article-inverted {
+    flex-direction: row-reverse;
+}
+
+.work-div, .work-div-inverted {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    max-width: 500px;
+    height: 400px;
+    padding: 80px 100px 80px 30px;
+}
+
+.work-div-inverted {
+    padding: 80px 30px 80px 100px;
+}
+
+.work-div a {
+    display:inline-block;
+    padding-top: 20px;
+}
+
+.work-article > img {
+    width: 900px;
+    box-shadow: var(--box-shadow);
+}
+
+/* ------------- 4.4 Services section ------------- */
+.services-section {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-basis: 330px;
+    max-width: 1300px;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-article {
+    border: 1px var(--purple) solid;
+    font-size: 0.9em;
+    min-width: 330px;
+    max-width: 350px;
+    height: 330px;
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+}
+
+.services-article img {
+    width: 100px;
+}
+
+/* ------------- 4.5 Contact section ------------- */
+.contact-section {
+    background: var(--purple-gradient);
+}
+
+.contact-div p{
+    color: white;
+    font-size: 1.2em;
+    font-weight: lighter;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.contact-div form {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+input, textarea {
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    min-width: 600px;
+    max-width: 800px;
+    border-radius: 5px;
+    border: 0;
+    color: grey;
+    padding: 10px;
+}
+
+input {
+    height: 40px;
+}
+
+/* ------------- 4.6 Footer -------------*/
+footer {
+    background: black;
+    font-size: 0.9em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
